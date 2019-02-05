@@ -14,12 +14,6 @@ $ npm install
 In `.env`, replace the value of `AWS_ROLE_ARN` with the value you create below in ["Create a role"](#create-a-role).
 Replace other config values as necessary,
 
-In `deploy.env`, add your own secret values to use when sending the email notification with SendGrid. The values are:
-
-- `FROM_EMAIL`: The email address you'd like the notification to appear to be sent from
-- `TO_EMAIL`: The email address you'd like the notification to be sent to
-- `SENDGRID_API_KEY`: Your SendGrid API key. If necessary, you can [create a new one here](https://app.sendgrid.com/settings/api_keys)
-
 ### Create a role
 
 First create an IAM policy that has full `Get` and `Put` access to your S3 bucket, then in the
