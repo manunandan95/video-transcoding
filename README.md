@@ -23,7 +23,7 @@ the one named "CloudWatchLogsFullAccess."
 
 Once you've finished creating the role, copy the ARN and put it in `.env` as mentioned above.
 
-## compiling
+## Compile
 ```bash
 $ npm run compile
 ```
