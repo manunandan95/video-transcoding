@@ -46,6 +46,5 @@ $ node-lambda deploy -e production
 ### Subscribe to S3 uploads
 
 In the AWS lambda console, add a trigger for your function. Specify the bucket you want to monitor, the event type as
-"Object Created (All)", and the suffix as ".mov". It should look like this:
+"Object Created (All)", and the suffix as ".mov". 
 
-![trigger](https://user-images.githubusercontent.com/4718399/29190808-7630af40-7de9-11e7-9eda-d7a0010707b3.png)
