@@ -1,9 +1,7 @@
 # video-transcoding
 
-[![Build Status](https://travis-ci.org/mblink/mov-to-mp4-lambda.svg?branch=master)](https://travis-ci.org/mblink/mov-to-mp4-lambda)
-
-This is a [lambda](https://aws.amazon.com/lambda/) that will convert S3 objects with a `.mov` extension to `.mp4`
-files. It downloads the `.mov` file, performs the conversion with `ffmpeg`, then reuploads the `.mp4` file.
+This is a [lambda](https://aws.amazon.com/lambda/) that will convert S3 objects with a `.mov` extension to `.webm`
+files. It downloads the `.mov` file, performs the conversion with `ffmpeg`, then reuploads the `.webm` file in destination bucket.
 
 ## Setup
 
@@ -11,9 +9,6 @@ Clone the repository, then run the following:
 
 ```bash
 $ npm install
-$ cp .env.sample .env
-$ cp deploy.env.sample deploy.env
-$ cp event.json.sample event.json
 ```
 
 In `.env`, replace the value of `AWS_ROLE_ARN` with the value you create below in ["Create a role"](#create-a-role).
@@ -34,12 +29,9 @@ the one named "CloudWatchLogsFullAccess."
 
 Once you've finished creating the role, copy the ARN and put it in `.env` as mentioned above.
 
-## Run locally
-
-To run the lambda function locally using the contents of `event.json` as the payload, run:
-
+## compiling
 ```bash
-$ npm run local
+$ npm run compile
 ```
 
 ## Deploy
@@ -47,15 +39,8 @@ $ npm run local
 To deploy the lambda to AWS, run:
 
 ```bash
-$ npm run deploy
-```
+$ node-lambda deploy -e production
 
-## Package
-
-If you want to package the lambda as a zip file for manual upload to AWS, run:
-
-```bash
-$ npm run package
 ```
 
 ### Subscribe to S3 uploads
