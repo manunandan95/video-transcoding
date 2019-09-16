@@ -38,7 +38,7 @@ class MovToMp4 {
 
   handle(callback) {
     return State.init()
-      .then(State.info('S3 records', this.records))
+      .then(State.info('S3 record', this.records))
       .then(this.getS3Records.bind(this))
       .then(State.info('S3 objects to process'))
       .then(this.processObjects.bind(this))
